@@ -9,7 +9,6 @@
         <h1>My Guitar Shop</h1>
     </header>
     <main>
-
         <h1>Your Cart</h1>
         <?php if (empty($_SESSION['cart12']) || count($_SESSION['cart12']) == 0) : ?>
             <p>There are no items in your cart.</p>

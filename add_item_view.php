@@ -9,7 +9,6 @@
         <h1>My Guitar Shop</h1>
     </header>
     <main>
-
         <h1>Add Item</h1>
         <form action="." method="post">
             <input type="hidden" name="action" value="add">
