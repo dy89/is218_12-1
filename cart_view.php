@@ -10,6 +10,7 @@
     </header>
     <main>
         <h1>Your Cart</h1>
+        <p>Session ID: <b><?php $id = session_id(); echo "$id"; ?></b></p>
         <?php if (empty($_SESSION['cart12']) || count($_SESSION['cart12']) == 0) : ?>
             <p>There are no items in your cart.</p>
         <?php else: ?>
@@ -60,7 +61,7 @@
         <?php endif; ?>
         <p><a href=".?action=show_add_item">Add Item</a></p>
         <p><a href=".?action=empty_cart">Empty Cart</a></p>
-
+        <p><a href=".?action=end_session">End Session and Delete Cookie</a></p>
     </main>
 </body>
 </html>

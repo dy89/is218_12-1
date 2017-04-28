@@ -10,6 +10,7 @@
     </header>
     <main>
         <h1>Add Item</h1>
+        <p>Session ID: <b><?php $id = session_id(); echo "$id"; ?></b></p>
         <form action="." method="post">
             <input type="hidden" name="action" value="add">
 

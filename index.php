@@ -1,12 +1,11 @@
 <?php
+date_default_timezone_set('America/New_york');
 // Start session management with a persistent cookie
 //$lifetime = 60 * 60 * 24 * 14;    // 2 weeks in seconds
 $lifetime = 60 * 60 * 24 * 365 * 3; // 3 years in seconds
 //$expires = 0; //session cookie
 session_set_cookie_params($lifetime, '/');
 session_start();
-$id = session_id(); 
-echo "Session ID : $id";
 // Create a cart array if needed
 if (empty($_SESSION['cart'])) { $_SESSION['cart'] = array(); }
 
@@ -53,6 +52,16 @@ switch($action) {
         break;
     case 'empty_cart':
         unset($_SESSION['cart12']);
+        include('cart_view.php');
+        break;
+    case 'end_session':
+        $_SESSION = array();
+        session_destroy();
+        $name = session_name();
+        $expire = strtotime('-3 year');
+        $params = session_get_cookie_params();
+        $path = $params['path'];
+        setcookie($name, '', $expire, $path);
         include('cart_view.php');
         break;
 }
